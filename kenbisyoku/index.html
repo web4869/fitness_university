@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健美食 | 食と身体の知性を磨くリカバリープログラム</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #121418;
+            color: #f1f1f1;
+            overflow-x: hidden;
+            line-height: 1.8;
+        }
+
+        .text-accent {
+            color: #b38b4d;
+        }
+
+        .bg-accent {
+            background-color: #b38b4d;
+        }
+
+        .bg-deep-wine {
+            background-color: #4a1d23;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section-label {
+            display: inline-block;
+            padding: 4px 16px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #b38b4d;
+            border: 1px solid #b38b4d;
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-item-border {
+            border-left: 2px solid #b38b4d;
+        }
+
+        .reveal-box {
+            background: linear-gradient(145deg, #1a1d22, #0c0e12);
+            border: 1px dashed rgba(179, 139, 77, 0.4);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center pt-20 pb-12 px-6 text-center">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/70 z-10"></div>
+            <img src="./scott-warman-rrYF1RfotSM-unsplash.jpg" alt="トップ背景画像" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-20 max-w-4xl">
+            <span class="section-label">KEN-BI-SHOKU PROJECT</span>
+            <h1 class="text-5xl md:text-7xl font-900 mb-6 leading-tight tracking-widest">
+                健美食
+            </h1>
+            <p class="text-lg md:text-3xl font-bold text-white mb-10 leading-relaxed tracking-wide">
+                健康をこよなく愛する人へ。
+                <span class="block mt-4 md:mt-6 text-accent text-base md:text-xl font-medium tracking-wider">
+                    あなたの経験が確かな自信に変わり<br>
+                    身体への興味・関心がさらに高まる<br>
+                    2時間へご招待。
+                </span>
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+                <a href="#booking"
+                    class="bg-deep-wine hover:bg-[#5e252c] text-white px-12 py-5 rounded-sm font-bold transition-all shadow-xl">
+                    プログラムへ参加する
+                </a>
+                <div class="text-left md:border-l border-gray-600 md:pl-6">
+                    <p class="text-sm font-bold text-white">2026年3月21日（土）</p>
+                    <p class="text-xs text-gray-500 font-medium">大阪・都島 Cafe JINにて開催</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Message Section -->
+    <section class="py-20 px-6 bg-[#0c0e12]">
+        <div class="max-w-5xl mx-auto text-center md:text-left">
+            <div>
+                <span class="section-label">Message</span>
+                <h2 class="text-xl md:text-3xl font-bold mb-6 leading-snug text-white">
+                    <span class="text-accent">「感覚」</span>を<span class="text-accent">「言葉」</span>へ変え、<br>
+                    社会における自身の価値を確信に。
+                </h2>
+
+                <div class="mb-8 text-gray-300 text-sm md:text-base leading-relaxed space-y-4 max-w-4xl">
+                    <p>
+                        あなたがこれまで学んできた知識や、健康に対する真摯な経験。<br class="hidden md:inline">
+                        それはすでに、人や社会の基盤を支える<strong class="text-white font-bold">計り知れない価値</strong>を秘めています。
+                    </p>
+                    <p>
+                        しかし、その価値を自分の中の「感覚」のままにしておいては、<br class="hidden md:inline">
+                        社会で本当に必要としている人へ届けることはできません。
+                    </p>
+                    <p class="text-accent font-bold">
+                        本イベントの最大の目的は、あなたの内なる資産を<br class="hidden md:inline">
+                        「言葉」として明確に理解し直すこと。
+                    </p>
+                    <p>
+                        自身の価値に揺るぎない確信を持った時、<br class="hidden md:inline">
+                        あなたの潜在的な可能性は、社会を健康にするインフラへと大きく広がっていきます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Experiences Section (Integrated Vertical Layout) -->
+    <section class="py-24 px-6 relative bg-[#121418]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="section-label">Experiences</span>
+                <h2 class="text-2xl md:text-4xl font-bold text-white tracking-wide">健美食を構成する3つの体験</h2>
+            </div>
+
+            <div class="space-y-12">
+                <!-- 1. 食事 -->
+                <div
+                    class="glass p-8 md:p-12 rounded-3xl border border-white/5 shadow-xl flex flex-col md:flex-row gap-8 md:gap-12 items-start relative overflow-hidden group hover:border-accent/30 transition-colors duration-500">
+                    <div
+                        class="w-20 h-20 md:w-28 md:h-28 flex-shrink-0 rounded-full bg-[#0c0e12] border-2 border-accent/30 flex items-center justify-center shadow-[0_0_20px_rgba(179,139,77,0.15)] relative">
+                        <!-- Icon: Vegetable -->
+                        <svg class="w-10 h-10 md:w-12 md:h-12 text-accent" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M2.27 21.7s9.87-3.5 12.73-6.43a4.5 4.5 0 0 0 0-6.36l-1.65-1.65a4.5 4.5 0 0 0-6.36 0C4.06 10.13 2.27 21.7 2.27 21.7z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M8.64 14l-2.05-2.04"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15.34 15l-2.46-2.46"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.33 2-3.5S15 2 15 2z"></path>
+                        </svg>
+                        <div
+                            class="absolute -inset-2 border border-accent/20 rounded-full border-dashed animate-[spin_15s_linear_infinite]">
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <span class="text-accent font-bold text-xs tracking-widest block mb-2 uppercase">Experience
+                            01</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">食事</h3>
+                        <h4 class="text-base md:text-lg font-bold text-accent mb-6 tracking-wide">思考を最適化する</h4>
+                        <div class="text-sm md:text-base text-gray-300 leading-loose space-y-5">
+                            <p>美味しい食事がもたらす「満足感」と「幸福感」は、脳と身体の受け入れ態勢を整え、知識の吸収を最大限に高めてくれます。<br
+                                    class="hidden md:inline">これが、私たちがイベントにおいて「食」にこだわる最大の理由です。
+                            </p>
+                            <p>質の高い食事は心身の緊張を解きほぐし、新しい知識を柔軟に吸収する土台を作ります。<br
+                                    class="hidden md:inline">さらに、深い満足感は論理的思考力を活性化させ、単なる情報の暗記ではない「本質的な理解」を促します。
+                            </p>
+                            <p>また、同じテーブルを囲むことで初対面同士の心理的距離も縮まります。<br
+                                    class="hidden md:inline">ポジティブな感情を伴う対話は、学びを記憶に強く定着させるだけでなく、これから社会へ出るあなたにとって価値あるネットワークを築くきっかけとなるはずです。
+                            </p>
+                        </div>
+                        <div
+                            class="mt-8 rounded-2xl overflow-hidden shadow-2xl border border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                            <img src="./viarami-hot-pot-7464495_1280.jpg" alt="食事の体験 イメージ"
+                                class="w-full h-auto object-cover max-h-64 md:max-h-80">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. 学習 -->
+                <div
+                    class="glass p-8 md:p-12 rounded-3xl border border-white/5 shadow-xl flex flex-col md:flex-row gap-8 md:gap-12 items-start relative overflow-hidden group hover:border-accent/30 transition-colors duration-500">
+                    <div
+                        class="w-20 h-20 md:w-28 md:h-28 flex-shrink-0 rounded-full bg-[#0c0e12] border-2 border-accent/30 flex items-center justify-center shadow-[0_0_20px_rgba(179,139,77,0.15)] relative">
+                        <!-- Icon: Brain/Idea -->
+                        <svg class="w-10 h-10 md:w-12 md:h-12 text-accent" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                            </path>
+                        </svg>
+                        <div
+                            class="absolute -inset-2 border border-accent/20 rounded-full border-dashed animate-[spin_15s_linear_infinite_reverse]">
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <span class="text-accent font-bold text-xs tracking-widest block mb-2 uppercase">Experience
+                            02</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">学習</h3>
+                        <h4 class="text-base md:text-lg font-bold text-accent mb-6 tracking-wide">問題解決能力を鍛える</h4>
+                        <div class="text-sm md:text-base text-gray-300 leading-loose space-y-5">
+                            <p>提示したトピックに対して、どうすれば問題が解決されるかをテーブルごとにディスカッションを行います。<br
+                                    class="hidden md:inline">頭の引き出しが整理されるだけでなく、異なる視点で導き出された他者の意見に耳を傾けることで、現在あなたが抱えている悩みや課題を解消するヒントを生み出すことが狙いです。
+                            </p>
+                            <p>専門的な知識や現場での経験をただ持っているだけでは、社会で必要とされる価値に変わることはありません。<br
+                                    class="hidden md:inline">自身の頭の中にある情報を論理的な「言葉」として言語化し、他者と意見を交わすプロセスを通して、複雑な課題を紐解く思考力を養います。
+                            </p>
+                            <p>自分一人では決して気づけなかった新しいアプローチに出会うこの時間は、あなたの可能性を大きく広げます。<br
+                                    class="hidden md:inline">この実践的なディスカッションを通して、その日から実践できる具体的なアイデアをたくさん持ち帰ってください。
+                            </p>
+                        </div>
+                        <div
+                            class="mt-8 rounded-2xl overflow-hidden shadow-2xl border border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                            <img src="./kenny-eliason-2RRq1BHPq4E-unsplash.jpg" alt="学習の体験 イメージ"
+                                class="w-full h-auto object-cover max-h-64 md:max-h-80">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. 交流 -->
+                <div
+                    class="glass p-8 md:p-12 rounded-3xl border border-white/5 shadow-xl flex flex-col md:flex-row gap-8 md:gap-12 items-start relative overflow-hidden group hover:border-accent/30 transition-colors duration-500">
+                    <div
+                        class="w-20 h-20 md:w-28 md:h-28 flex-shrink-0 rounded-full bg-[#0c0e12] border-2 border-accent/30 flex items-center justify-center shadow-[0_0_20px_rgba(179,139,77,0.15)] relative">
+                        <!-- Icon: Network/Users -->
+                        <svg class="w-10 h-10 md:w-12 md:h-12 text-accent" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4" stroke-width="1.5"></circle>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <div
+                            class="absolute -inset-2 border border-accent/20 rounded-full border-dashed animate-[spin_15s_linear_infinite]">
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <span class="text-accent font-bold text-xs tracking-widest block mb-2 uppercase">Experience
+                            03</span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">交流</h3>
+                        <h4 class="text-base md:text-lg font-bold text-accent mb-6 tracking-wide">人的資本の拡大</h4>
+                        <div class="text-sm md:text-base text-gray-300 leading-loose space-y-5">
+                            <p>美味しい食事や深いディスカッションを通じて心理的な距離が縮まった後は、同じ志を持つ参加者同士がビジョンを共有し合う、本質的な対話の時間を設けています。<br
+                                    class="hidden md:inline">ただ表面的な名刺交換で終わるのではなく、互いの知性を尊重し、共に成長できる関係性を築くことが目的です。
+                            </p>
+                            <p>リラックスした安全な環境でのコミュニケーションは、一人では決して到達できない新しい価値や共創のアイデアを生み出します。<br
+                                    class="hidden md:inline">健康や社会課題に真摯に向き合うプロフェッショナル同士が、それぞれの専門知識や経験を掛け合わせることで、明日からの活動を強力に後押しします。
+                            </p>
+                            <p>ここで生まれた質の高い繋がりは、単なる知人という枠を超えた実践的な協力関係となります。<br
+                                    class="hidden md:inline">これから社会へ羽ばたくあなたのキャリアを支え続ける、かけがえのない重要な資産（人的資本）へと確実に発展していくはずです。
+                            </p>
+                        </div>
+                        <div
+                            class="mt-8 rounded-2xl overflow-hidden shadow-2xl border border-white/10 opacity-90 hover:opacity-100 transition-opacity">
+                            <img src="./dylan-gillis-YJdCZba0TYE-unsplash.jpg" alt="交流の体験 イメージ"
+                                class="w-full h-auto object-cover max-h-64 md:max-h-80">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Menu Section -->
+    <section class="py-24 px-6 relative overflow-hidden bg-[#0c0e12]">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="mb-20">
+                <span class="section-label">Course Menu</span>
+                <h2 class="text-3xl font-bold mb-2 text-white">メイン：4種の京野菜鍋</h2>
+                <p class="text-sm text-gray-500">京都の契約農家直送・生命力を味わう特別プログラム</p>
+            </div>
+
+            <div class="space-y-16 text-left">
+                <!-- Main Dish: Secret 4 Pots -->
+                <div class="menu-item-border pl-6 md:pl-10">
+                    <div class="flex items-center gap-4 mb-8">
+                        <span class="text-accent font-bold text-lg">Focus.</span>
+                        <h3 class="text-xl font-bold text-white tracking-wide">京野菜を堪能する<br>4種のスープ</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <!-- Secret Items -->
+                        <div class="reveal-box p-8 rounded-xl text-center">
+                            <p class="text-accent text-xs mb-2">soup 01</p>
+                            <p class="text-sm font-bold text-white tracking-widest">近日公開</p>
+                        </div>
+                        <div class="reveal-box p-8 rounded-xl text-center">
+                            <p class="text-accent text-xs mb-2">soup 02</p>
+                            <p class="text-sm font-bold text-white tracking-widest">近日公開</p>
+                        </div>
+                        <div class="reveal-box p-8 rounded-xl text-center">
+                            <p class="text-accent text-xs mb-2">soup 03</p>
+                            <p class="text-sm font-bold text-white tracking-widest">近日公開</p>
+                        </div>
+                        <div class="reveal-box p-8 rounded-xl text-center">
+                            <p class="text-accent text-xs mb-2">soup 04</p>
+                            <p class="text-sm font-bold text-white tracking-widest">近日公開</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Gifts Section -->
+    <section class="py-24 px-6 relative overflow-hidden bg-[#0c0e12]">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="section-label">Gifts</span>
+                <h2 class="text-3xl font-bold mb-2 text-white">イベント参加者へのギフト</h2>
+                <p class="text-sm text-gray-500 mt-4">ご参加いただいた皆様へ、明日から活かせる3つの特別なギフトをご用意しております。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Gift 1 -->
+                <div
+                    class="glass p-8 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-accent/30 transition-all text-center md:text-left">
+                    <div class="text-accent font-bold text-2xl mb-4 italic">01.</div>
+                    <h3 class="text-lg font-bold text-white mb-4">当日の鍋のレシピと<br>京野菜</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        イベントで味わった美味しい鍋を家でも再現できるレシピと、京都の農家から直送された野菜をお持ち帰りいただけます。
+                    </p>
+                </div>
+
+                <!-- Gift 2 -->
+                <div
+                    class="glass p-8 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-accent/30 transition-all text-center md:text-left">
+                    <div class="text-accent font-bold text-2xl mb-4 italic">02.</div>
+                    <h3 class="text-lg font-bold text-white mb-4">健康経営事業への<br>参画パス</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        企業の健康づくりをサポートするFiTNESS UNIVERSITYのプロジェクトに、参加できる権利をお渡しします。
+                    </p>
+                </div>
+
+                <!-- Gift 3 -->
+                <div
+                    class="glass p-8 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-accent/30 transition-all text-center md:text-left">
+                    <div class="text-accent font-bold text-2xl mb-4 italic">03.</div>
+                    <h3 class="text-lg font-bold text-white mb-4">活動を支援する<br>コミュニティへ招待</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        同じ目標を持つ仲間と繋がり、これからのキャリア構築を継続的に応援し合えるコミュニティへご招待します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="py-24 px-6 relative overflow-hidden bg-[#0c0e12]">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="section-label">当日の流れ</span>
+                <h2 class="text-3xl font-bold mb-2 text-white">タイムスケジュール</h2>
+                <p class="text-sm text-gray-500 mt-4">2時間のプログラムを、心身のメカニズムに合わせて論理的に構築しています。</p>
+            </div>
+
+            <div class="relative border-l border-white/10 ml-4 md:ml-8 space-y-12 pb-4">
+                <!-- 18:00 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(179,139,77,0.6)]">
+                    </div>
+                    <div class="text-accent font-bold text-xl mb-1 tracking-wider">18:00</div>
+                    <h3 class="text-lg font-bold text-white mb-2">オープニング</h3>
+                    <ul class="text-sm text-gray-400 space-y-1 list-disc list-inside">
+                        <li>ご挨拶</li>
+                        <li>ゆかヨガ（5分）</li>
+                    </ul>
+                    <p class="text-xs text-gray-500 mt-2">※立ったままできるヨガ</p>
+                </div>
+
+                <!-- 18:15 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(179,139,77,0.6)]">
+                    </div>
+                    <div class="text-accent font-bold text-xl mb-1 tracking-wider">18:15</div>
+                    <h3 class="text-lg font-bold text-white mb-3">ディスカッション</h3>
+                    <ul class="text-sm text-gray-400 space-y-1 list-disc list-inside mb-4">
+                        <li>自己紹介</li>
+                    </ul>
+                    <div
+                        class="bg-gradient-to-r from-accent/20 to-transparent border border-accent/30 rounded-xl p-5 mb-4 relative overflow-hidden shadow-lg flex items-center gap-4 group">
+                        <div
+                            class="absolute left-0 top-0 bottom-0 w-1.5 bg-accent shadow-[0_0_10px_rgba(179,139,77,0.8)]">
+                        </div>
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center border border-accent/50 group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p
+                                class="text-xs text-accent font-bold mb-1 tracking-widest uppercase flex items-center gap-2">
+                                <span class="relative flex h-2 w-2">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                                </span>
+                                Secret Topic
+                            </p>
+                            <p class="text-lg font-bold text-white tracking-wide">トピック① <span
+                                    class="text-sm font-normal text-gray-400 ml-2">（近日公開）</span></p>
+                        </div>
+                    </div>
+                    <div class="glass p-4 rounded-lg border-l-2 border-accent">
+                        <p class="text-xs text-accent font-bold">【鍋 第1弾】金時人参、菊芋、水菜、九条ネギ</p>
+                    </div>
+                </div>
+
+                <!-- 18:45 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(179,139,77,0.6)]">
+                    </div>
+                    <div class="text-accent font-bold text-xl mb-1 tracking-wider">18:45</div>
+                    <h3 class="text-lg font-bold text-white mb-2">アナウンス</h3>
+                    <ul class="text-sm text-gray-400 space-y-1 list-disc list-inside">
+                        <li>参加者の活動告知、イベント案内</li>
+                    </ul>
+                </div>
+
+                <!-- 19:00 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(179,139,77,0.6)]">
+                    </div>
+                    <div class="text-accent font-bold text-xl mb-1 tracking-wider">19:00</div>
+                    <h3 class="text-lg font-bold text-white mb-2">席替え</h3>
+                    <ul class="text-sm text-gray-400 space-y-1 list-disc list-inside">
+                        <li>自己紹介</li>
+                    </ul>
+                </div>
+
+                <!-- 19:10 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(179,139,77,0.6)]">
+                    </div>
+                    <div class="text-accent font-bold text-xl mb-1 tracking-wider">19:10</div>
+                    <h3 class="text-lg font-bold text-white mb-3">ディスカッション</h3>
+                    <div
+                        class="bg-gradient-to-r from-accent/20 to-transparent border border-accent/30 rounded-xl p-5 mb-4 relative overflow-hidden shadow-lg flex items-center gap-4 group">
+                        <div
+                            class="absolute left-0 top-0 bottom-0 w-1.5 bg-accent shadow-[0_0_10px_rgba(179,139,77,0.8)]">
+                        </div>
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center border border-accent/50 group-hover:scale-110 transition-transform">
+                            <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p
+                                class="text-xs text-accent font-bold mb-1 tracking-widest uppercase flex items-center gap-2">
+                                <span class="relative flex h-2 w-2">
+                                    <span
+                                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                                </span>
+                                Secret Topic
+                            </p>
+                            <p class="text-lg font-bold text-white tracking-wide">トピック② <span
+                                    class="text-sm font-normal text-gray-400 ml-2">（近日公開）</span></p>
+                        </div>
+                    </div>
+                    <div class="glass p-4 rounded-lg border-l-2 border-accent">
+                        <p class="text-xs text-accent font-bold">【鍋 第2弾】紫大根、壬生菜、菜花、わさび菜</p>
+                    </div>
+                </div>
+
+                <!-- 19:40 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(179,139,77,0.6)]">
+                    </div>
+                    <div class="text-accent font-bold text-xl mb-1 tracking-wider">19:40</div>
+                    <h3 class="text-lg font-bold text-white mb-2">クロージング</h3>
+                    <ul class="text-sm text-gray-400 space-y-1 list-disc list-inside">
+                        <li>トピックの解説</li>
+                        <li>FiTNESS UNIVERSITYの紹介</li>
+                        <li>今後のスケジュール</li>
+                    </ul>
+                </div>
+
+                <!-- 20:00 -->
+                <div class="relative pl-8 md:pl-12">
+                    <div
+                        class="absolute w-4 h-4 bg-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_rgba(179,139,77,0.6)]">
+                    </div>
+                    <div class="text-accent font-bold text-xl mb-1 tracking-wider">20:00</div>
+                    <h3 class="text-lg font-bold text-white mb-2">終了</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info & Booking -->
+    <section id="booking" class="py-24 px-6 bg-zinc-900 border-t border-white/5">
+        <div class="max-w-2xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12">開催のご案内</h2>
+            <div class="glass overflow-hidden rounded-2xl mb-12 text-left shadow-2xl">
+                <div class="grid grid-cols-3 border-b border-white/5">
+                    <div class="p-6 bg-white/5 font-bold text-accent text-sm">開催日時</div>
+                    <div class="p-6 col-span-2 text-sm text-gray-200">2026年3月21日（土） 18:00 - 20:00</div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-white/5">
+                    <div class="p-6 bg-white/5 font-bold text-accent text-sm">会場</div>
+                    <div class="p-6 col-span-2 text-sm text-gray-200">
+                        Cafe JIN<br>
+                        <span class="text-xs text-gray-400 leading-relaxed">
+                            大阪府大阪市都島区都島本通3-16-3 パルハイツ 1F<br>
+                            （大阪メトロ都島駅 徒歩2分）
+                        </span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-white/5">
+                    <div class="p-6 bg-white/5 font-bold text-accent text-sm">定員</div>
+                    <div class="p-6 col-span-2 text-sm text-gray-200">30名様（先着順となります）</div>
+                </div>
+                <div class="grid grid-cols-3">
+                    <div class="p-6 bg-white/5 font-bold text-accent text-sm">参加費</div>
+                    <div class="p-6 col-span-2 text-sm font-bold text-white">4,000円</div>
+                </div>
+            </div>
+
+            <a href="https://forms.gle/e3dSHLtu6JhVHoKZ6" target="_blank" rel="noopener noreferrer"
+                class="block w-full text-center bg-accent hover:bg-[#c49a5b] text-white py-6 rounded-sm text-xl font-bold shadow-2xl transition-all">
+                参加申込
+            </a>
+            <div class="mt-12 text-center">
+                <p class="text-xs text-gray-600 mb-2 font-bold tracking-widest uppercase">Location Map</p>
+                <div class="w-full bg-white/5 rounded-lg overflow-hidden border border-white/10 shadow-lg">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Cafe+JIN,+%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E9%83%BD%E5%B3%B6%E5%8C%BA%E9%83%BD%E5%B3%B6%E6%9C%AC%E9%80%9A3-16-3&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                    <div class="p-3 bg-white/5 border-t border-white/10">
+                        <p class="text-xs md:text-sm text-gray-400">〒534-0021 大阪府大阪市都島区都島本通３丁目１６−３ パルハイツ 1F</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-16 border-t border-white/5 text-center text-gray-600 text-[10px] tracking-[0.3em] uppercase">
+        FITNESS UNIVERSITY | KEN-BI-SHOKU PROJECT 2026
+    </footer>
+
+</body>
+
+</html>
