@@ -339,7 +339,61 @@
             }
 
             header h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-pre {
+                font-size: 0.7rem;
+                letter-spacing: 0.2em;
+            }
+
+            .hero-statement {
+                font-size: 0.95rem;
+                line-height: 1.8;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+
+            .phi-card {
+                padding: 30px;
+            }
+
+            .phi-text h3 {
+                font-size: 1.3rem;
+                line-height: 1.5;
+            }
+
+            .faculty-card {
+                padding: 30px;
+            }
+
+            .faculty-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .faculty-card p {
+                font-size: 0.8rem;
+            }
+
+            .sp-br-hidden {
+                display: none;
+            }
+
+            .footer-nav {
+                flex-direction: column;
+                gap: 40px;
             }
         }
     </style>
@@ -358,11 +412,12 @@
 
     <header>
         <span class="hero-pre">Global Academic Framework 2026</span>
-        <h1>Sensory Logic<br>Human Capital</h1>
+        <h1>Sensory Logic<br class="sp-br-hidden">Human Capital</h1>
         <div class="hero-statement">
-            「感覚を論理へ、身体を資本へ。」<br>
-            私たちは、あらゆる社会要素を「健康」というレンズで再定義し、<br>
+            「感覚を論理へ、身体を資本へ。」<br class="sp-br-hidden">
+            私たちは、あらゆる社会要素を「健康」というレンズで再定義し、<br class="sp-br-hidden">
             新たな価値を創造するプロフェッショナルを育成します。
+        </div>
     </header>
 
     <main>
@@ -373,7 +428,7 @@
                 </div>
                 <div class="phi-card">
                     <div class="phi-text">
-                        <h3>身体を「資本」として最適化し、<br>社会のOSをアップデートする。</h3>
+                        <h3>身体を「資本」として最適化し、<br class="sp-br-hidden">社会のOSをアップデートする。</h3>
                         <p style="margin-bottom: 1.5rem;">FiTNESS
                             UNIVERSITYは、教育、AI、経営支援、メディア、人材育成、商品開発、地域活性化、そして食育。これら全ての領域に生理学的な論理を組み込みます。</p>
                         <p style="color: var(--color-text-sub); font-size: 0.95rem;">
@@ -474,7 +529,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h2>FiTNESS UNIVERSITY</h2>
-                    <p>Academic Framework 2026<br>Human Capital Maximization Project.</p>
+                    <p>Academic Framework 2026<br class="sp-br-hidden">Human Capital Maximization Project.</p>
                 </div>
                 <div class="footer-nav">
                     <div class="footer-col">
