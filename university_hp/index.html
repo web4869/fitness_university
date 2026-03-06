@@ -193,6 +193,8 @@
             flex: 1;
             border-radius: 2px;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
         }
 
         /* Faculties Grid */
@@ -350,8 +352,7 @@
         <ul class="nav-links">
             <li><a href="#philosophy">理念</a></li>
             <li><a href="#faculties">学部紹介</a></li>
-            <li><a href="#e2b">社会実装</a></li>
-            <li><a href="#syllabus">シラバス</a></li>
+            <li><a href="#contact">シラバス</a></li>
         </ul>
     </nav>
 
@@ -362,7 +363,6 @@
             「感覚を論理へ、身体を資本へ。」<br>
             私たちは、あらゆる社会要素を「健康」というレンズで再定義し、<br>
             新たな価値を創造するプロフェッショナルを育成します。
-        </div>
     </header>
 
     <main>
@@ -375,9 +375,9 @@
                     <div class="phi-text">
                         <h3>身体を「資本」として最適化し、<br>社会のOSをアップデートする。</h3>
                         <p style="margin-bottom: 1.5rem;">FiTNESS
-                            UNIVERSITYは、商品開発、教育、経営支援、AI、コミュニティ、そして食文化。これら全ての領域に生理学的な論理を組み込みます。</p>
+                            UNIVERSITYは、教育、AI、経営支援、メディア、人材育成、商品開発、地域活性化、そして食育。これら全ての領域に生理学的な論理を組み込みます。</p>
                         <p style="color: var(--color-text-sub); font-size: 0.95rem;">
-                            属人的な「センス」を排除し、再現性のある「エンジニアリング」として人的資本を最大化する。それが私たちが提唱する新しいアカデミズムの形です。</p>
+                            属人的な「センス」をミニマル化し、再現性のある「エンジニアリング」として人的資本を最大化する。それが私たちが提唱する新しいアカデミズムの形です。</p>
                     </div>
                     <div class="phi-visual">
 
@@ -393,25 +393,25 @@
                 </div>
 
                 <div class="faculty-grid">
-                    <!-- 商品開発 -->
+                    <!-- 1. 教育 -->
                     <article class="faculty-card">
                         <span class="faculty-num">FACULTY 01</span>
-                        <div class="faculty-cross">健康 × プロダクトデザイン</div>
-                        <h3>健康商品開発学部</h3>
-                        <p>生理学的エビデンスに基づく次世代デバイスやサプリメントの開発。ユーザーの生体信号をポジティブに変化させるプロダクトの設計思想を学びます。</p>
-                        <div class="skill-tag">習得スキル：生体データに基づいた「科学的製品開発スキル」</div>
-                    </article>
-
-                    <!-- 教育 -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 02</span>
                         <div class="faculty-cross">健康 × 教育デザイン</div>
                         <h3>健康教育学部</h3>
                         <p>脳の可塑性を利用した学習効率の最大化。身体コンディションと認知能力の相関を研究し、次世代の教育OSを社会に実装する手法を修得します。</p>
                         <div class="skill-tag">習得スキル：学習効率を物理的に制御する「教育設計スキル」</div>
                     </article>
 
-                    <!-- 店舗・マーケ -->
+                    <!-- 2. AI (名称変更) -->
+                    <article class="faculty-card">
+                        <span class="faculty-num">FACULTY 02</span>
+                        <div class="faculty-cross">健康 × 人工知能</div>
+                        <h3>健康AI人間設計学部</h3>
+                        <p>膨大な生体ログをAIで解析し、パフォーマンスの低下を事前に予測。個別のバイオリズムに最適化された行動介入アルゴリズムを開発します。</p>
+                        <div class="skill-tag">習得スキル：生体信号を価値に変える「AI解析・実装スキル」</div>
+                    </article>
+
+                    <!-- 3. 経営支援 -->
                     <article class="faculty-card">
                         <span class="faculty-num">FACULTY 03</span>
                         <div class="faculty-cross">健康 × 経営支援</div>
@@ -420,31 +420,49 @@
                         <div class="skill-tag">習得スキル：人的資本を利益に変える「経営コンサルティングスキル」</div>
                     </article>
 
-                    <!-- AI -->
+                    <!-- 4. 宣伝・広報 (名称・内容変更) -->
                     <article class="faculty-card">
                         <span class="faculty-num">FACULTY 04</span>
-                        <div class="faculty-cross">健康 × 人工知能</div>
-                        <h3>健康AIデータサイエンス学部</h3>
-                        <p>膨大な生体ログをAIで解析し、パフォーマンスの低下を事前に予測。個別のバイオリズムに最適化された行動介入アルゴリズムを開発します。</p>
-                        <div class="skill-tag">習得スキル：生体信号を価値に変える「AI解析・実装スキル」</div>
+                        <div class="faculty-cross">健康 × 宣伝・広報</div>
+                        <h3>健康宣伝・広報学部</h3>
+                        <p>行動変容のアルゴリズムと情報伝達の最適化。生理学的に正しい知見を、効果的な広報戦略で社会に届けるためのコミュニケーション技術を研究します。</p>
+                        <div class="skill-tag">習得スキル：健康価値を社会に広める「戦略的PR・広報スキル」</div>
                     </article>
 
-                    <!-- コミュニティ -->
+                    <!-- 5. 人材育成 (サークル風名称の学部) -->
                     <article class="faculty-card">
                         <span class="faculty-num">FACULTY 05</span>
-                        <div class="faculty-cross">健康 × コミュニティ</div>
-                        <h3>健康コミュニティ学部</h3>
-                        <p>神経科学的なアプローチで、集団の熱量や所属意識を高める設計を研究。イベントやコミュニティを通じて「集団の健康」を最大化します。</p>
-                        <div class="skill-tag">習得スキル：集団のエンゲージメントを高める「コミュニティ構築スキル」</div>
+                        <div class="faculty-cross">健康 × 人材育成</div>
+                        <h3>健康スキルシェア学部</h3>
+                        <p>大学コミュニティ発の実践型スキルアップの場。トレーナーやセラピストが部活動のように集い、フラットな関係で現場の生きた技術や知識を教え合います。</p>
+                        <div class="skill-tag">習得スキル：仲間と共に現場力を高める「実践的指導・専門スキル」</div>
                     </article>
 
-                    <!-- 食文化 -->
+                    <!-- 6. 商品開発 (ナンバリング変更) -->
                     <article class="faculty-card">
                         <span class="faculty-num">FACULTY 06</span>
-                        <div class="faculty-cross">健康 × 食文化</div>
-                        <h3>健康食文化学部</h3>
-                        <p>食を単なる栄養補給ではなく、脳と身体を豊かにする「文化」として定義。知的生産性をブーストさせる精密な食事設計と、持続可能な食体験をデザインします。</p>
-                        <div class="skill-tag">習得スキル：人生の質を高める「次世代の食文化デザインスキル」</div>
+                        <div class="faculty-cross">健康 × プロダクトデザイン</div>
+                        <h3>健康商品開発学部</h3>
+                        <p>生理学的エビデンスに基づく次世代デバイスやサプリメントの開発。ユーザーの生体信号をポジティブに変化させるプロダクトの設計思想を学びます。</p>
+                        <div class="skill-tag">習得スキル：生体データに基づいた「科学的製品開発スキル」</div>
+                    </article>
+
+                    <!-- 7. 地域活性化 (ナンバリング変更) -->
+                    <article class="faculty-card">
+                        <span class="faculty-num">FACULTY 07</span>
+                        <div class="faculty-cross">健康 × 地域活性化</div>
+                        <h3>健康地方創生学部</h3>
+                        <p>地域の社会基盤を「健康」というパラダイムで再設計。住民のウェルビーイング向上と地方経済の活性化を両立させる、データドリブンな地方創生モデルを構築します。</p>
+                        <div class="skill-tag">習得スキル：健康を軸に街を再起動させる「データドリブン地方創生スキル」</div>
+                    </article>
+
+                    <!-- 8. 食育 (ナンバリング変更) -->
+                    <article class="faculty-card">
+                        <span class="faculty-num">FACULTY 08</span>
+                        <div class="faculty-cross">健康 × 食育</div>
+                        <h3>健康食育学部</h3>
+                        <p>食を脳と身体に対する「入力データ」かつ「教育」として再定義。科学的根拠に基づいた食育プログラムを構築し、次世代のパフォーマンスの底上げを図ります。</p>
+                        <div class="skill-tag">習得スキル：データに基づく食事で能力を引き出す「精密食育スキル」</div>
                     </article>
                 </div>
             </div>
