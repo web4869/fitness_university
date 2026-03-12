@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FiTNESS UNIVERSITY | Academic Framework 2026</title>
     <meta name="description" content="感覚を論理へ、身体を資本へ。人的資本を最大化する、透明性の高い学術機関。">
-
+    
     <!-- Google Fonts: Modern Sans-Serif Unity -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --color-sky-blue: #00A3E0;
-            /* 快晴の青空をイメージしたアクセント */
+            --color-sky-blue: #00A3E0; /* 快晴の青空をイメージしたアクセント */
             --color-sky-light: #E1F5FE;
+            --color-sky-dark: #0077A8;
             --color-base-white: #FFFFFF;
             --color-soft-gray: #F8FAFC;
             --color-text-main: #1E293B;
@@ -28,16 +25,8 @@
         }
 
         /* Base & Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
             font-family: var(--font-main);
             background-color: var(--color-base-white);
@@ -48,514 +37,541 @@
         }
 
         /* Layout */
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
+        .container { width: 90%; max-width: 1100px; margin: 0 auto; }
 
         /* Navigation */
         nav {
             position: fixed;
-            top: 0;
-            width: 100%;
-            height: 80px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            top: 0; width: 100%; height: 80px;
+            display: flex; justify-content: space-between; align-items: center;
             padding: 0 5%;
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(8px);
             z-index: 1000;
             border-bottom: 1px solid rgba(0, 163, 224, 0.1);
         }
-
-        .logo {
+        .logo { 
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 1.2rem; 
             letter-spacing: 0.15em;
             color: var(--color-sky-blue);
             text-decoration: none;
+            cursor: pointer;
         }
-
-        .nav-links {
-            display: flex;
-            gap: 35px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--color-text-main);
-            font-size: 0.85rem;
-            font-weight: 500;
+        .nav-links { display: flex; gap: 35px; list-style: none; }
+        .nav-links a { 
+            text-decoration: none; color: var(--color-text-main); 
+            font-size: 0.85rem; font-weight: 500; 
             transition: var(--transition);
+            cursor: pointer;
         }
+        .nav-links a:hover { color: var(--color-sky-blue); }
 
-        .nav-links a:hover {
-            color: var(--color-sky-blue);
-        }
+        /* App Container (for page switching) */
+        #app { position: relative; width: 100%; min-height: 100vh; }
+        .page { width: 100%; transition: opacity 0.5s ease; }
+        .page.hidden { display: none; opacity: 0; }
 
         /* Hero Section */
         header {
             height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            display: flex; flex-direction: column; justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3)),
-                url('https://images.unsplash.com/photo-1523050853064-8593b9859f5a?auto=format&fit=crop&q=80&w=2000');
+            /* AI×フィットネス×グローバルキャンパスを連想させる画像 */
+            background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.9)),
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
             background-position: center;
             text-align: center;
             padding: 0 5%;
         }
-
-        .hero-pre {
-            font-size: 0.85rem;
-            letter-spacing: 0.4em;
-            color: var(--color-sky-blue);
-            margin-bottom: 1.5rem;
+        .hero-pre { 
+            font-size: 0.85rem; letter-spacing: 0.4em; 
+            color: var(--color-sky-blue); margin-bottom: 1.5rem;
             font-weight: 700;
             text-transform: uppercase;
         }
-
-        header h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            line-height: 1.2;
-            color: var(--color-text-main);
-            margin-bottom: 2rem;
+        header h1 { 
+            font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.2; 
+            color: var(--color-text-main); margin-bottom: 2rem;
             font-weight: 500;
         }
-
-        .hero-statement {
-            font-size: 1.1rem;
-            color: var(--color-text-sub);
-            max-width: 700px;
-            font-weight: 300;
-            line-height: 2;
+        .hero-statement { 
+            font-size: 1.1rem; color: var(--color-text-main); max-width: 700px;
+            font-weight: 500; line-height: 2;
         }
 
         /* Common Section Styling */
-        section {
-            padding: 120px 0;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .section-header h2 {
-            font-size: 2.2rem;
-            font-weight: 500;
-            position: relative;
-            display: inline-block;
-        }
-
+        section { padding: 120px 0; }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-size: 2.2rem; font-weight: 500; position: relative; display: inline-block; }
         .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 2px;
-            background: var(--color-sky-blue);
+            content: ''; position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%);
+            width: 40px; height: 2px; background: var(--color-sky-blue);
         }
 
         /* Philosophy */
-        .philosophy {
-            background-color: var(--color-soft-gray);
-        }
-
+        .philosophy { background-color: var(--color-soft-gray); }
         .phi-card {
-            background: #fff;
-            padding: 60px;
-            border-radius: 2px;
+            background: #fff; padding: 60px; border-radius: 2px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
-            display: flex;
-            gap: 60px;
-            align-items: center;
+            display: flex; gap: 60px; align-items: center;
         }
-
-        .phi-text {
-            flex: 1;
-        }
-
-        .phi-text h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            color: var(--color-sky-blue);
-        }
-
-        .phi-visual {
-            flex: 1;
-            border-radius: 2px;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-        }
+        .phi-text { flex: 1; }
+        .phi-text h3 { font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--color-sky-blue); }
+        .phi-visual { flex: 1; border-radius: 2px; overflow: hidden; display: flex; justify-content: center; }
 
         /* Faculties Grid */
-        .faculties {
-            background: #fff;
-        }
-
-        .faculty-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        .faculties { background: #fff; padding-top: 80px; }
+        .faculty-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 40px;
         }
-
         .faculty-card {
-            padding: 40px;
-            background: #fff;
-            border: 1px solid #edf2f7;
-            transition: var(--transition);
-            border-radius: 4px;
-            display: flex;
-            flex-direction: column;
+            padding: 40px; background: #fff; border: 1px solid #edf2f7;
+            transition: var(--transition); border-radius: 4px;
+            display: flex; flex-direction: column;
+            cursor: pointer; position: relative;
+            overflow: hidden;
         }
-
-        .faculty-card:hover {
+        .faculty-card:hover { 
             border-color: var(--color-sky-blue);
             box-shadow: 0 15px 30px rgba(0, 163, 224, 0.08);
+            transform: translateY(-5px);
         }
-
-        .faculty-num {
-            font-size: 0.7rem;
-            color: var(--color-text-sub);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: block;
-            opacity: 0.6;
+        .faculty-card::after {
+            content: '詳細を見る ➔'; position: absolute; bottom: 20px; right: 30px;
+            font-size: 0.8rem; font-weight: 700; color: var(--color-sky-blue);
+            opacity: 0; transition: var(--transition); transform: translateX(-10px);
         }
+        .faculty-card:hover::after { opacity: 1; transform: translateX(0); }
+        .faculty-card:hover .skill-tag { opacity: 0; } /* ホバー時にスキルタグを消して詳細リンクを見せる */
 
-        /* Health x ○○ Style */
+        .faculty-num { font-size: 0.7rem; color: var(--color-text-sub); font-weight: 700; margin-bottom: 0.5rem; display: block; opacity: 0.6; }
         .faculty-cross {
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--color-sky-blue);
-            margin-bottom: 1rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            font-size: 0.9rem; font-weight: 700; color: var(--color-sky-blue);
+            margin-bottom: 1rem; letter-spacing: 0.1em; text-transform: uppercase;
         }
-
-        .faculty-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1.2rem;
-            font-weight: 500;
-            border-bottom: 1px solid #f1f5f9;
-            padding-bottom: 10px;
-        }
-
-        .faculty-card p {
-            font-size: 0.85rem;
-            color: var(--color-text-sub);
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-
-        /* Skill Label */
+        .faculty-card h3 { font-size: 1.4rem; margin-bottom: 1.2rem; font-weight: 500; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
+        .faculty-card p { font-size: 0.85rem; color: var(--color-text-sub); margin-bottom: 1.5rem; flex-grow: 1; }
+        
         .skill-tag {
             background-color: var(--color-soft-gray);
             border-left: 3px solid var(--color-sky-blue);
-            padding: 10px 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--color-text-main);
+            padding: 10px 15px; font-size: 0.8rem; font-weight: 500;
+            color: var(--color-text-main); transition: var(--transition);
         }
+
+        /* Unites Community Section */
+        .unites-section { background-color: var(--color-soft-gray); padding: 100px 0; }
+        .unites-banner {
+            background: linear-gradient(135deg, var(--color-sky-blue), var(--color-sky-dark));
+            border-radius: 12px; padding: 60px; color: #fff;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 163, 224, 0.2);
+            cursor: pointer; transition: var(--transition);
+        }
+        .unites-banner:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0, 163, 224, 0.3); }
+        .unites-info { flex: 1; padding-right: 40px; text-align: center; }
+        .unites-info h3 { font-size: 2.5rem; margin-bottom: 1rem; font-weight: 700; letter-spacing: 0.05em; }
+        .unites-info p { font-size: 1rem; opacity: 0.9; margin-bottom: 1.5rem; line-height: 1.8; }
+        .unites-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 1rem; }
+        
+        .unites-form-container {
+            background: #fff; padding: 40px; border-radius: 8px; width: 100%; max-width: 500px;
+            color: var(--color-text-main); margin: 0 auto; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .unites-form-container h4 { margin-bottom: 1.5rem; font-size: 1.2rem; text-align: center; color: var(--color-sky-blue); }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-group input {
+            width: 100%; padding: 12px 15px; border: 1px solid #e2e8f0; border-radius: 4px;
+            font-size: 0.9rem; font-family: var(--font-main); transition: var(--transition);
+        }
+        .form-group input:focus { outline: none; border-color: var(--color-sky-blue); box-shadow: 0 0 0 3px rgba(0, 163, 224, 0.1); }
+        .submit-btn {
+            width: 100%; background: var(--color-sky-blue); color: #fff; border: none;
+            padding: 15px; font-size: 1rem; font-weight: 700; border-radius: 4px;
+            cursor: pointer; transition: var(--transition);
+        }
+        .submit-btn:hover { background: var(--color-sky-dark); transform: translateY(-2px); }
+
+        /* Detail Page Styling */
+        #faculty-detail-page { padding-top: 120px; padding-bottom: 100px; background: #fff; min-height: 100vh;}
+        .back-btn {
+            display: inline-flex; align-items: center; gap: 10px; color: var(--color-text-sub);
+            text-decoration: none; font-weight: 500; font-size: 0.9rem; cursor: pointer;
+            margin-bottom: 40px; transition: var(--transition);
+        }
+        .back-btn:hover { color: var(--color-sky-blue); }
+        .detail-header { border-bottom: 2px solid var(--color-sky-light); padding-bottom: 30px; margin-bottom: 50px; }
+        .detail-num { font-size: 1rem; color: var(--color-text-sub); font-weight: 700; letter-spacing: 0.1em; }
+        .detail-cross { font-size: 1.2rem; color: var(--color-sky-blue); font-weight: 700; margin: 10px 0; }
+        .detail-title { font-size: 3rem; font-weight: 500; color: var(--color-text-main); }
+        
+        .detail-content { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; }
+        .detail-main h4 { font-size: 1.4rem; color: var(--color-sky-blue); margin-bottom: 1.5rem; margin-top: 2rem; border-left: 4px solid var(--color-sky-blue); padding-left: 15px; }
+        .detail-main p { font-size: 1.05rem; line-height: 1.9; color: var(--color-text-main); margin-bottom: 1.5rem; }
+        
+        .detail-sidebar { background: var(--color-soft-gray); padding: 40px; border-radius: 8px; height: fit-content; }
+        .detail-sidebar h5 { font-size: 1.1rem; color: var(--color-text-main); margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
+        .feature-list { list-style: none; }
+        .feature-list li { margin-bottom: 1rem; padding-left: 20px; position: relative; font-size: 0.9rem; color: var(--color-text-sub); }
+        .feature-list li::before { content: '■'; position: absolute; left: 0; color: var(--color-sky-blue); font-size: 0.8rem; }
 
         /* Footer */
-        footer {
-            padding: 80px 0 40px;
-            background: #fff;
-            border-top: 1px solid #eee;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 60px;
-        }
-
-        .footer-brand h2 {
-            font-size: 1.4rem;
-            color: var(--color-sky-blue);
-            margin-bottom: 1rem;
-        }
-
-        .footer-brand p {
-            font-size: 0.8rem;
-            color: var(--color-text-sub);
-        }
-
-        .footer-nav {
-            display: flex;
-            gap: 80px;
-        }
-
-        .footer-col h5 {
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            margin-bottom: 1.5rem;
-            color: var(--color-text-main);
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-col a {
-            text-decoration: none;
-            color: var(--color-text-sub);
-            font-size: 0.8rem;
-            transition: 0.3s;
-        }
-
-        .footer-col a:hover {
-            color: var(--color-sky-blue);
-        }
-
-        .copyright {
-            text-align: center;
-            font-size: 0.7rem;
-            color: #cbd5e1;
-            padding-top: 40px;
-            border-top: 1px solid #f1f5f9;
-        }
+        footer { padding: 60px 0; background: #fff; border-top: 1px solid #eee; text-align: center; }
+        .copyright { font-size: 0.8rem; color: #cbd5e1; }
 
         /* Responsive */
         @media (max-width: 968px) {
-            .phi-card {
-                flex-direction: column;
-                padding: 40px;
-            }
-
-            header h1 {
-                font-size: 2.8rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-pre {
-                font-size: 0.7rem;
-                letter-spacing: 0.2em;
-            }
-
-            .hero-statement {
-                font-size: 0.95rem;
-                line-height: 1.8;
-            }
-
-            section {
-                padding: 80px 0;
-            }
-
-            .section-header h2 {
-                font-size: 1.6rem;
-            }
-
-            .phi-card {
-                padding: 30px;
-            }
-
-            .phi-text h3 {
-                font-size: 1.3rem;
-                line-height: 1.5;
-            }
-
-            .faculty-card {
-                padding: 30px;
-            }
-
-            .faculty-card h3 {
-                font-size: 1.25rem;
-            }
-
-            .faculty-card p {
-                font-size: 0.8rem;
-            }
-
-            .sp-br-hidden {
-                display: none;
-            }
-
-            .footer-nav {
-                flex-direction: column;
-                gap: 40px;
-            }
+            .phi-card { flex-direction: column; padding: 40px; }
+            .unites-banner { flex-direction: column; padding: 40px 20px; gap: 40px; }
+            .unites-info { padding-right: 0; text-align: center; }
+            .detail-content { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
-
 <body>
 
     <nav>
-        <a href="#" class="logo">FiTNESS UNIVERSITY</a>
+        <div class="logo" onclick="showHome()">FiTNESS UNIVERSITY</div>
         <ul class="nav-links">
-            <li><a href="#philosophy">理念</a></li>
-            <li><a href="#faculties">学部紹介</a></li>
-            <li><a href="#contact">シラバス</a></li>
+            <li><a onclick="showHome(); setTimeout(() => location.hash='#faculties', 50);">学部紹介</a></li>
+            <li><a onclick="openUnitesDetail()">Community (Unites)</a></li>
         </ul>
     </nav>
 
-    <header>
-        <span class="hero-pre">Global Academic Framework 2026</span>
-        <h1>Sensory Logic<br class="sp-br-hidden">Human Capital</h1>
-        <div class="hero-statement">
-            「感覚を論理へ、身体を資本へ。」<br class="sp-br-hidden">
-            私たちは、あらゆる社会要素を「健康」というレンズで再定義し、<br class="sp-br-hidden">
-            新たな価値を創造するプロフェッショナルを育成します。
+    <div id="app">
+        <!-- ▼▼▼ MAIN PAGE ▼▼▼ -->
+        <div id="home-page" class="page">
+            <header>
+                <span class="hero-pre">Global Academic Framework 2026</span>
+                <h1>Sensory Logic<br>Human Capital</h1>
+                <div class="hero-statement">
+                    「感覚を論理へ、身体を資本へ。」<br>
+                    AIテクノロジーとグローバル・フィットネス知見を融合し、<br>
+                    次世代の知的生産性を最大化するプロフェッショナルを育成します。
+                </div>
+            </header>
+
+            <main>
+                <section id="philosophy" class="philosophy">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2>大学理念</h2>
+                        </div>
+                        <div class="phi-card">
+                            <div class="phi-text">
+                                <h3>身体を「資本」として最適化し、<br>社会のOSをアップデートする。</h3>
+                                <p style="margin-bottom: 1.5rem;">FiTNESS UNIVERSITYは、教育、AI、経営支援、メディア、人材育成、商品開発、地域活性化、そして食育。これら全ての領域に生理学的な論理を組み込みます。</p>
+                                <p style="color: var(--color-text-sub); font-size: 0.95rem;">属人的な「センス」をミニマル化し、再現性のある「エンジニアリング」として人的資本を最大化する。それが私たちが提唱する新しいアカデミズムの形です。</p>
+                            </div>
+                            <div class="phi-visual">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="faculties" class="faculties">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2>厳選された6つの学部</h2>
+                        </div>
+                        
+                        <div class="faculty-grid">
+                            <!-- 1. AI -->
+                            <article class="faculty-card" onclick="openDetail('ai')">
+                                <span class="faculty-num">FACULTY 01</span>
+                                <div class="faculty-cross">健康 × 人工知能</div>
+                                <h3>健康AI人間設計学部</h3>
+                                <p>膨大な生体ログをAIで解析し、パフォーマンス低下を予測。個別のバイオリズムに最適化された介入アルゴリズムを開発します。</p>
+                                <div class="skill-tag">習得：生体信号を価値に変える「AI解析・実装スキル」</div>
+                            </article>
+
+                            <!-- 2. 教育 -->
+                            <article class="faculty-card" onclick="openDetail('edu')">
+                                <span class="faculty-num">FACULTY 02</span>
+                                <div class="faculty-cross">健康 × 教育デザイン</div>
+                                <h3>健康教育学部</h3>
+                                <p>脳の可塑性を利用した学習効率の最大化。身体コンディションと認知能力の相関を研究し、次世代の教育OSを実装します。</p>
+                                <div class="skill-tag">習得：学習効率を物理的に制御する「教育設計スキル」</div>
+                            </article>
+
+                            <!-- 3. 経営支援 -->
+                            <article class="faculty-card" onclick="openDetail('biz')">
+                                <span class="faculty-num">FACULTY 03</span>
+                                <div class="faculty-cross">健康 × 経営支援</div>
+                                <h3>健康経営支援学部</h3>
+                                <p>店舗経営やマーケティングを人的資本の観点から再構築。離職率低下やLTV向上を、生理学的なアプローチで解決します。</p>
+                                <div class="skill-tag">習得：人的資本を利益に変える「経営コンサルティングスキル」</div>
+                            </article>
+
+                            <!-- 4. メディア -->
+                            <article class="faculty-card" onclick="openDetail('media')">
+                                <span class="faculty-num">FACULTY 04</span>
+                                <div class="faculty-cross">健康 × 宣伝・広報</div>
+                                <h3>健康メディア学部</h3>
+                                <p>行動変容のアルゴリズムと情報伝達の最適化。生理学的に正しい知見を、ノイズなく社会に浸透させるUI/UXを研究します。</p>
+                                <div class="skill-tag">習得：情報で人の健康を動かす「ヘルス・コミュニケーションスキル」</div>
+                            </article>
+
+                            <!-- 5. 商品開発 -->
+                            <article class="faculty-card" onclick="openDetail('product')">
+                                <span class="faculty-num">FACULTY 05</span>
+                                <div class="faculty-cross">健康 × プロダクトデザイン</div>
+                                <h3>健康商品開発学部</h3>
+                                <p>生理学的エビデンスに基づく次世代デバイスやサプリメントの開発。ユーザーの生体信号をポジティブに変化させる設計思想。</p>
+                                <div class="skill-tag">習得：生体データに基づいた「科学的製品開発スキル」</div>
+                            </article>
+
+                            <!-- 6. 食育 -->
+                            <article class="faculty-card" onclick="openDetail('food')">
+                                <span class="faculty-num">FACULTY 06</span>
+                                <div class="faculty-cross">健康 × 食育</div>
+                                <h3>健康食育学部</h3>
+                                <p>食を脳と身体に対する「入力データ」かつ「教育」として再定義。科学的根拠に基づいた精密な食育プログラムを構築します。</p>
+                                <div class="skill-tag">習得：データに基づく食事で能力を引き出す「精密食育スキル」</div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="unites" class="unites-section">
+                    <div class="container">
+                        <div class="unites-banner" onclick="openUnitesDetail()">
+                            <div class="unites-info">
+                                <span class="unites-badge">FREE MEMBERSHIP</span>
+                                <h3>Unites</h3>
+                                <p>FiTNESS UNIVERSITYが主宰するグローバル・コミュニティ「Unites（ユナイツ）」。<br>
+                                学部での学びを超え、実践者たちが横の繋がりで知識と技術を共有・アップデートするプラットフォームです。</p>
+                                <span style="display: inline-block; margin-top: 1rem; color: #fff; font-weight: bold; border-bottom: 1px solid #fff;">詳細・申し込みはこちら ➔</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer>
+                <div class="container">
+                    <div class="copyright">&copy; 2026 FiTNESS UNIVERSITY. ALL RIGHTS RESERVED.</div>
+                </div>
+            </footer>
         </div>
-    </header>
 
-    <main>
-        <section id="philosophy" class="philosophy">
+        <!-- ▼▼▼ DETAIL PAGE ▼▼▼ -->
+        <div id="faculty-detail-page" class="page hidden">
             <div class="container">
-                <div class="section-header">
-                    <h2>大学理念</h2>
+                <a class="back-btn" onclick="showHome()">
+                    ← 学部一覧へ戻る
+                </a>
+                
+                <div class="detail-header">
+                    <div id="detail-num" class="detail-num">FACULTY 0X</div>
+                    <div id="detail-cross" class="detail-cross">健康 × ○○</div>
+                    <h2 id="detail-title" class="detail-title">学部名</h2>
                 </div>
-                <div class="phi-card">
-                    <div class="phi-text">
-                        <h3>身体を「資本」として最適化し、<br class="sp-br-hidden">社会のOSをアップデートする。</h3>
-                        <p style="margin-bottom: 1.5rem;">FiTNESS
-                            UNIVERSITYは、教育、AI、経営支援、メディア、人材育成、商品開発、地域活性化、そして食育。これら全ての領域に生理学的な論理を組み込みます。</p>
-                        <p style="color: var(--color-text-sub); font-size: 0.95rem;">
-                            属人的な「センス」をミニマル化し、再現性のある「エンジニアリング」として人的資本を最大化する。それが私たちが提唱する新しいアカデミズムの形です。</p>
+
+                <div class="detail-content">
+                    <div class="detail-main">
+                        <h4>学部の詳細・特徴</h4>
+                        <p id="detail-desc">詳細な説明文がここに入ります。</p>
+                        
+                        <h4>今後の展望 (Vision)</h4>
+                        <p id="detail-vision">展望がここに入ります。</p>
                     </div>
-                    <div class="phi-visual">
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="faculties" class="faculties">
-            <div class="container">
-                <div class="section-header">
-                    <h2>学部・研究所</h2>
-                </div>
-
-                <div class="faculty-grid">
-                    <!-- 1. 教育 -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 01</span>
-                        <div class="faculty-cross">健康 × 教育デザイン</div>
-                        <h3>健康教育学部</h3>
-                        <p>脳の可塑性を利用した学習効率の最大化。身体コンディションと認知能力の相関を研究し、次世代の教育OSを社会に実装する手法を修得します。</p>
-                        <div class="skill-tag">習得スキル：学習効率を物理的に制御する「教育設計スキル」</div>
-                    </article>
-
-                    <!-- 2. AI (名称変更) -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 02</span>
-                        <div class="faculty-cross">健康 × 人工知能</div>
-                        <h3>健康AI人間設計学部</h3>
-                        <p>膨大な生体ログをAIで解析し、パフォーマンスの低下を事前に予測。個別のバイオリズムに最適化された行動介入アルゴリズムを開発します。</p>
-                        <div class="skill-tag">習得スキル：生体信号を価値に変える「AI解析・実装スキル」</div>
-                    </article>
-
-                    <!-- 3. 経営支援 -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 03</span>
-                        <div class="faculty-cross">健康 × 経営支援</div>
-                        <h3>健康経営支援学部</h3>
-                        <p>店舗経営やマーケティングを人的資本の観点から再構築。離職率の低下やLTVの向上を、生理学的なアプローチで解決するB2B戦略を研究します。</p>
-                        <div class="skill-tag">習得スキル：人的資本を利益に変える「経営コンサルティングスキル」</div>
-                    </article>
-
-                    <!-- 4. 宣伝・広報 (名称・内容変更) -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 04</span>
-                        <div class="faculty-cross">健康 × 宣伝・広報</div>
-                        <h3>健康メディア学部</h3>
-                        <p>行動変容のアルゴリズムと情報伝達の最適化。生理学的に正しい知見を、効果的な広報戦略で社会に届けるためのコミュニケーション技術を研究します。</p>
-                        <div class="skill-tag">習得スキル：健康価値を社会に広める「戦略的PR・広報スキル」</div>
-                    </article>
-
-                    <!-- 5. 人材育成 (サークル風名称の学部) -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 05</span>
-                        <div class="faculty-cross">健康 × 人材育成</div>
-                        <h3>健康スキルシェア学部</h3>
-                        <p>大学コミュニティ発の実践型スキルアップの場。トレーナーやセラピストが部活動のように集い、フラットな関係で現場の生きた技術や知識を教え合います。</p>
-                        <div class="skill-tag">習得スキル：仲間と共に現場力を高める「実践的指導・専門スキル」</div>
-                    </article>
-
-                    <!-- 6. 商品開発 (ナンバリング変更) -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 06</span>
-                        <div class="faculty-cross">健康 × プロダクトデザイン</div>
-                        <h3>健康商品開発学部</h3>
-                        <p>生理学的エビデンスに基づく次世代デバイスやサプリメントの開発。ユーザーの生体信号をポジティブに変化させるプロダクトの設計思想を学びます。</p>
-                        <div class="skill-tag">習得スキル：生体データに基づいた「科学的製品開発スキル」</div>
-                    </article>
-
-                    <!-- 7. 地域活性化 (ナンバリング変更) -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 07</span>
-                        <div class="faculty-cross">健康 × 地域活性化</div>
-                        <h3>健康地方創生学部</h3>
-                        <p>地域の社会基盤を「健康」というパラダイムで再設計。住民のウェルビーイング向上と地方経済の活性化を両立させる、データドリブンな地方創生モデルを構築します。</p>
-                        <div class="skill-tag">習得スキル：健康を軸に街を再起動させる「データドリブン地方創生スキル」</div>
-                    </article>
-
-                    <!-- 8. 食育 (ナンバリング変更) -->
-                    <article class="faculty-card">
-                        <span class="faculty-num">FACULTY 08</span>
-                        <div class="faculty-cross">健康 × 食育</div>
-                        <h3>健康食育学部</h3>
-                        <p>食を脳と身体に対する「入力データ」かつ「教育」として再定義。科学的根拠に基づいた食育プログラムを構築し、次世代のパフォーマンスの底上げを図ります。</p>
-                        <div class="skill-tag">習得スキル：データに基づく食事で能力を引き出す「精密食育スキル」</div>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h2>FiTNESS UNIVERSITY</h2>
-                    <p>Academic Framework 2026<br class="sp-br-hidden">Human Capital Maximization Project.</p>
-                </div>
-                <div class="footer-nav">
-                    <div class="footer-col">
-                        <h5>UNIVERSITY</h5>
-                        <ul>
-                            <li><a href="#">Admission</a></li>
-                            <li><a href="#">Research</a></li>
-                            <li><a href="#">Faculty List</a></li>
+                    <div class="detail-sidebar">
+                        <h5>習得できる主要スキル・特徴</h5>
+                        <ul id="detail-features" class="feature-list">
+                            <!-- JSで生成 -->
                         </ul>
                     </div>
-                    <div class="footer-col">
-                        <h5>BUSINESS</h5>
-                        <ul>
-                            <li><a href="#">E2B Alliance</a></li>
-                            <li><a href="#">Consulting</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
+                </div>
+            </div>
+            <footer style="margin-top: 100px;">
+                <div class="container">
+                    <div class="copyright">&copy; 2026 FiTNESS UNIVERSITY. ALL RIGHTS RESERVED.</div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- ▼▼▼ UNITES DETAIL PAGE ▼▼▼ -->
+        <div id="unites-detail-page" class="page hidden">
+            <div class="container" style="padding-top: 120px; padding-bottom: 100px; min-height: 80vh;">
+                <a class="back-btn" onclick="showHome()">
+                    ← トップへ戻る
+                </a>
+                
+                <div class="detail-header" style="text-align: center; border-bottom: none; margin-bottom: 30px;">
+                    <span class="unites-badge" style="background: var(--color-sky-blue); color: white; padding: 5px 15px; border-radius: 50px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; margin-bottom: 1rem; display: inline-block;">FREE MEMBERSHIP</span>
+                    <h2 class="detail-title">Community (Unites)</h2>
+                </div>
+
+                <div class="detail-content" style="grid-template-columns: 1fr; max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div class="detail-main">
+                        <p style="font-size: 1.1rem; line-height: 1.9; color: var(--color-text-main); margin-bottom: 2rem;">
+                            FiTNESS UNIVERSITYが主宰するグローバル・コミュニティ「Unites（ユナイツ）」。<br>
+                            学部での学びを超え、実践者たちが横の繋がりで知識と技術を共有・アップデートするプラットフォームです。<br>学生、トレーナー、経営者、エンジニア。すべての変革者がここに集います。
+                        </p>
+                        
+                        <div class="unites-form-container">
+                            <h4>Join the Community</h4>
+                            <p style="font-size: 0.9rem; color: var(--color-text-sub); margin-bottom: 1.5rem;">※加盟は無料です。以下のフォームよりお申し込みください。</p>
+                            <form onsubmit="event.preventDefault(); alert('申し込みを受け付けました。ご登録のメールアドレスに詳細をお送りします。');">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" placeholder="Email Address" required>
+                                </div>
+                                <button type="submit" class="submit-btn">無料で加盟する (Apply Now)</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 FiTNESS UNIVERSITY. ALL RIGHTS RESERVED.
-            </div>
+            <footer>
+                <div class="container">
+                    <div class="copyright">&copy; 2026 FiTNESS UNIVERSITY. ALL RIGHTS RESERVED.</div>
+                </div>
+            </footer>
         </div>
-    </footer>
+    </div>
 
+    <!-- JavaScript for Page Switching & Data -->
+    <script>
+        const facultyData = {
+            'ai': {
+                num: 'FACULTY 01',
+                cross: '健康 × 人工知能',
+                title: '健康AI人間設計学部',
+                desc: '本学部では、ウェアラブルデバイス等から得られる膨大な生体ログ（心拍変動、睡眠深度、血中酸素濃度等）をAIモデルに学習させ、人間のパフォーマンスが低下する「生理学的バグ」をリアルタイムで特定します。単なる健康管理にとどまらず、個人のバイオリズムに最適化された行動介入（食事のタイミング、光の照射、運動負荷）のアルゴリズムをプログラミングする技術を学びます。',
+                vision: '属人的な健康法を完全に排除し、全人類の生体データを最適化するユニバーサルな「人間設計OS」を構築。世界規模で知的生産性の最大化を目指します。',
+                features: [
+                    'リアルタイム生体データ解析技術',
+                    '行動予測・介入アルゴリズムの開発',
+                    'パフォーマンス低下の事前検知モデル構築',
+                    'Python/Rを用いた医療・健康データサイエンス'
+                ]
+            },
+            'edu': {
+                num: 'FACULTY 02',
+                cross: '健康 × 教育デザイン',
+                title: '健康教育学部',
+                desc: '「学習効率」は気合や根性ではなく、脳への酸素供給量や神経伝達物質のバランスによって決まります。本学部では、脳の可塑性（Neuroplasticity）を最大限に引き出すための身体コンディショニングと、教育カリキュラムの相関関係を科学的に研究します。集中力を阻害する要因を排除し、情報吸収のレイテンシを極限まで下げる教育空間の設計思想を修得します。',
+                vision: '学習者の身体状態を常にトラッキングし、最も効率よく情報を吸収できるタイミングで教育を提供する「アダプティブ・ラーニングインフラ」を教育現場へ実装します。',
+                features: [
+                    '神経科学に基づく学習プログラム設計',
+                    '脳内リソース配分の最適化技術',
+                    '認知負荷を低減する環境・空間デザイン',
+                    'エビデンスベースの指導者育成'
+                ]
+            },
+            'biz': {
+                num: 'FACULTY 03',
+                cross: '健康 × 経営支援',
+                title: '健康経営支援学部',
+                desc: '組織の生産性低下や離職の根本原因を「従業員の神経学的過負荷（Neuro-Overload）」と定義。本学部では、B2B市場において、企業の人的資本を保護・拡張するための健康インフラの導入戦略を学びます。ROI（投資対効果）を算出し、健康投資がいかに企業利益に直結するかを論理的に証明し、実行に移すコンサルティング能力を鍛え上げます。',
+                vision: '「健康投資＝コスト」という古い概念を破壊し、ウェルネスが企業価値の中核となる社会を実現。日本の労働生産性をグローバルトップレベルへ引き上げます。',
+                features: [
+                    '人的資本ROIの算出と分析',
+                    '神経学的過負荷の組織診断と改善',
+                    '健康ソリューションのB2B営業・導入戦略',
+                    '店舗OSの効率化とマネジメント'
+                ]
+            },
+            'media': {
+                num: 'FACULTY 04',
+                cross: '健康 × 宣伝・広報',
+                title: '健康メディア学部',
+                desc: '優れた健康科学も、人に伝わらなければ価値がありません。本学部では、行動経済学とUI/UXデザインを駆使し、生理学的に正しい知見をノイズなく社会に浸透させるためのコミュニケーション技術を研究します。「読ませる」のではなく、直感的に「行動させる」ための情報アーキテクチャや、デジタルマーケティングの実践的なスキルを身につけます。',
+                vision: 'エセ科学や不確かな健康情報を一掃し、科学的根拠に基づいた「真の健康情報」が最も影響力を持つ、クリーンで論理的なメディアエコシステムを構築します。',
+                features: [
+                    '行動変容を促すUI/UXデザイン',
+                    'ヘルスケア領域のデジタルマーケティング',
+                    'エビデンスの視覚化（インフォグラフィック設計）',
+                    '論理的かつ共感を生むコピーライティング'
+                ]
+            },
+            'product': {
+                num: 'FACULTY 05',
+                cross: '健康 × プロダクトデザイン',
+                title: '健康商品開発学部',
+                desc: '生体信号をポジティブに変化させる「ハードウェア（デバイス）」と「ソフトウェア（サプリメント・ツール）」の開発を行います。本学部では、解剖学や生理学のエビデンスに基づいた設計思想を基盤とし、プロトタイピングからユーザーテスト、市場投入までのプロセスを一貫して学びます。主観的な効果ではなく、データで効果を証明できる製品作りを徹底します。',
+                vision: '日常のあらゆる接点（座る、眠る、身につける）に最適化されたウェルネス・プロダクトを社会実装し、生活するだけでパフォーマンスが上がる世界を創出します。',
+                features: [
+                    '生体データに基づく人間工学デザイン',
+                    'サプリメント・介入ツールの科学的処方設計',
+                    'プロトタイピングとA/Bテストの実施',
+                    'エビデンス（臨床データ）の取得と評価'
+                ]
+            },
+            'food': {
+                num: 'FACULTY 06',
+                cross: '健康 × 食育',
+                title: '健康食育学部',
+                desc: '「食」を単なるカロリー摂取ではなく、脳と身体に対する『プログラミングコード（入力データ）』として再定義します。本学部では、分子栄養学に基づき、血糖値のスパイクを防ぎ、集中力や回復力を最大化する精密な食事設計を学びます。また、持続可能な食文化として社会にどう啓蒙していくかという「教育」の側面も深く研究します。',
+                vision: '個人のDNAや腸内細菌叢に完全にパーソナライズされた「精密栄養（Precision Nutrition）」を一般化し、国民全体のポテンシャルを食から底上げします。',
+                features: [
+                    '分子栄養学に基づく精密な献立設計',
+                    '脳機能（パフォーマンス）と栄養素の相関分析',
+                    '腸内環境（マイクロバイオーム）の最適化',
+                    '次世代に向けた科学的食育プログラムの立案'
+                ]
+            }
+        };
+
+        const homePage = document.getElementById('home-page');
+        const detailPage = document.getElementById('faculty-detail-page');
+        const unitesPage = document.getElementById('unites-detail-page');
+
+        function openDetail(facultyId) {
+            const data = facultyData[facultyId];
+            if (!data) return;
+
+            // コンテンツの挿入
+            document.getElementById('detail-num').innerText = data.num;
+            document.getElementById('detail-cross').innerText = data.cross;
+            document.getElementById('detail-title').innerText = data.title;
+            document.getElementById('detail-desc').innerText = data.desc;
+            document.getElementById('detail-vision').innerText = data.vision;
+            
+            const featuresList = document.getElementById('detail-features');
+            featuresList.innerHTML = '';
+            data.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.innerText = feature;
+                featuresList.appendChild(li);
+            });
+
+            // 画面切り替え (トップへスクロール)
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            homePage.classList.add('hidden');
+            unitesPage.classList.add('hidden');
+            
+            setTimeout(() => {
+                detailPage.classList.remove('hidden');
+            }, 300); // fade out duration
+        }
+
+        function openUnitesDetail() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            homePage.classList.add('hidden');
+            detailPage.classList.add('hidden');
+            
+            setTimeout(() => {
+                unitesPage.classList.remove('hidden');
+            }, 300);
+        }
+
+        function showHome() {
+            detailPage.classList.add('hidden');
+            unitesPage.classList.add('hidden');
+            setTimeout(() => {
+                homePage.classList.remove('hidden');
+            }, 300);
+        }
+    </script>
 </body>
-
 </html>
